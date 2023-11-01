@@ -1,15 +1,12 @@
 'use client'
-import { Zona } from '@/src/types'
-import { descargarCSV } from '@/src/utils/crearMatriz'
-import { Card, Flex, Loader, Text } from '@mantine/core'
-import { useEffect, useState } from 'react'
+import { Box, Card, Flex, Loader, Text } from '@mantine/core'
+import { useEffect } from 'react'
 import { useResults } from '../useResults'
 import { Clavero } from './Clavero'
 import { DatosMesa } from './Datos'
 
 export const E14s = () => {
-  const [zonas, setZonas] = useState<Zona[]>()
-  const { setResultados } = useResults()
+  const { setResultados, zonas, setZonas } = useResults()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +15,6 @@ export const E14s = () => {
         const data = await response.json()
         setResultados(data.mesas)
         setZonas(data.zonas)
-        descargarCSV(data.zonas)
       } catch (error) {
         console.error('Error fetching data: ', error)
       }
@@ -31,7 +27,7 @@ export const E14s = () => {
   }
 
   return (
-    <>
+    <Box mt={100}>
       {zonas.map((zona, index) => (
         <div key={`zona-${index}`}>
           {zona.puestos.map((puesto, index) => (
@@ -84,6 +80,6 @@ export const E14s = () => {
           ))}
         </div>
       ))}
-    </>
+    </Box>
   )
 }

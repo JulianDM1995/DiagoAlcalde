@@ -1,6 +1,7 @@
 import { DatosProps } from '@/app/api/mesa/set-valor/route'
 import { notifications } from '@mantine/notifications'
 import { create } from 'zustand'
+import { Zona } from '../types'
 
 export type Result = {
   id_zona: string
@@ -20,6 +21,9 @@ type ResultProps = {
     id_puesto: string,
     numero_mesa: number
   ) => Result | undefined
+
+  zonas?: Zona[]
+  setZonas: (zonas: Zona[]) => void
 }
 
 export const useResults = create<ResultProps>((set, get) => ({
@@ -64,4 +68,5 @@ export const useResults = create<ResultProps>((set, get) => ({
     )
     return resultado
   },
+  setZonas: (zonas) => set({ zonas }),
 }))
