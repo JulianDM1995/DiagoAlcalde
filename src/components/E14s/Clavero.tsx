@@ -38,7 +38,8 @@ export const Clavero = ({ id_zona, id_puesto, mesa_numero }: ClaveroProps) => {
       </Flex>
     )
   return (
-    <Flex p={'xs'} m={'lg'} direction={'column'} align={'center'}>
+    <Flex p={'xs'} m={'lg'} direction={'column'} w={'100%'} align={'center'}>
+      <Text size="sm">{'Claveros'}</Text>
       <Image
         radius="md"
         onClick={() => open(src)}
@@ -46,7 +47,6 @@ export const Clavero = ({ id_zona, id_puesto, mesa_numero }: ClaveroProps) => {
         fit="contain"
         src={cortada}
       />
-      <Text>{'Claveros'}</Text>
     </Flex>
   )
 }

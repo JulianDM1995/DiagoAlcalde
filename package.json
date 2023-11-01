@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate && sudo apt-get update && sudo apt-get install imagemagick"
   },
   "dependencies": {
     "@mantine/core": "^7.1.7",
