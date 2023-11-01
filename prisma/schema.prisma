@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model MesaDB {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id_zona     String
+  id_puesto   String
+  numero_mesa Int
+  diago       Int
+  hp          Int
+}

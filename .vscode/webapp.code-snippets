@@ -1,0 +1,136 @@
+{
+  // Snippet for Frontend page
+  "frontend_page ": {
+    "prefix": "frontend_page",
+    "description": "This snippet was created for 'Frontend page' using EZSnippet.io",
+    "body": [
+      "import { NextPage } from 'next'",
+      "",
+      "export const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Page: NextPage = () => {",
+      "  return <div>{'Page for ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}'}</div>",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Page",
+      ""
+    ]
+  },
+
+  // Snippet for Frontend component
+  "frontend_component ": {
+    "prefix": "frontend_component",
+    "description": "This snippet was created for 'Frontend component' using EZSnippet.io",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = () => {",
+      "  ",
+      "    return <div>{'Componente: ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}'}</div>",
+      "}",
+      ""
+    ]
+  },
+
+  // Snippet for Frontend component with childr
+  "frontend_component_with_children ": {
+    "prefix": "frontend_component_with_children",
+    "description": "This snippet was created for 'Frontend component with children' using EZSnippet.io",
+    "body": [
+      "type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props = {",
+      "  children: React.ReactNode",
+      "}",
+      "export const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = ({ children }: ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props) => {",
+      "  return (",
+      "    <div>",
+      "      {'Componente: ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}'}",
+      "      {children}",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ]
+  },
+
+  // Snippet for Zustand store
+  "zustand_store ": {
+    "prefix": "zustand_store",
+    "description": "This snippet was created for 'Zustand store' using EZSnippet.io",
+    "body": [
+      "import { create } from 'zustand'",
+      "",
+      "type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props = {",
+      "  // Props",
+      "}",
+      "",
+      "export const use${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = create<${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props>((set, get) => ({",
+      "  // Definitions",
+      "}))"
+    ]
+  },
+
+  // Snippet for Zustand Store with loading and error
+  "zustand_store_with_loading_and_error ": {
+    "prefix": "zustand_store_with_loading_and_error",
+    "description": "This snippet was created for 'Zustand Store with loading and' using EZSnippet.io",
+    "body": [
+      "import { create } from 'zustand'",
+      "",
+      "type StoreProps = {",
+      "  loading?: boolean",
+      "  error?: string",
+      "  resetError: () => void",
+      "}",
+      "",
+      "export const use${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = create<StoreProps>((set, get) => ({",
+      "  resetError: () => set({ error: undefined }),",
+      "}))",
+      ""
+    ]
+  },
+
+  // Snippet for Typescript type and array
+  "typescript_type_and_array ": {
+    "prefix": "typescript_type_and_array",
+    "description": "This snippet was created for 'Typescript type and array' using EZSnippet.io",
+    "body": [
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = {",
+      "  // Props",
+      "}",
+      "",
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}s = ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}[]"
+    ]
+  },
+
+  // Snippet for Typescript type
+  "typescript_type ": {
+    "prefix": "typescript_type",
+    "description": "This snippet was created for 'Typescript type' using EZSnippet.io",
+    "body": [
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = {",
+      "  // Props",
+      "}"
+    ]
+  },
+
+  // Snippet for Backend route
+  "backend_route ": {
+    "prefix": "backend_route",
+    "description": "This snippet was created for 'Backend route' using EZSnippet.io",
+    "body": [
+      "import { NextRequest, NextResponse } from 'next/server'",
+      "",
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props = {}",
+      "",
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Response = {}",
+      "",
+      "export async function POST(request: NextRequest) {",
+      "  const props = (await request.json()) as ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props",
+      "  NextResponse.json({ props })",
+      "}",
+      ""
+    ]
+  },
+  // Snippet for Use session
+  "use_session ": {
+    "prefix": "use_session",
+    "description": "This snippet was created for 'Use session' using EZSnippet.io",
+    "body": ["const { data: session } = useSession()"]
+  }
+}
